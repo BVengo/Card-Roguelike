@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f56eb2fc61a8ad498e1bbb8546ae94d, type: 3}
+  m_Name: Find Stone
+  m_EditorClassIdentifier: 
+  displayName: Find Stone
+  item: {fileID: 11400000, guid: 104924a183a042d4795941f6bff863ef, type: 2}
+  countMinimum: 1
+  countMaximum: 3
+  prefab: {fileID: 6783412581002236634, guid: 9fcc54d4f5a8b4545aec29d1e507d344, type: 3}
