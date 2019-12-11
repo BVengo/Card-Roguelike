@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour, IEnumerable<KeyValuePair<Item, int>>
+public class Inventory : GameManager, IEnumerable<KeyValuePair<Item, int>>
 {
     public event Action Changed;
 
     Dictionary<Item, int> items = new Dictionary<Item, int>();
-
+    
     public int this[Item item]
     {
         get

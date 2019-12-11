@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Find Gem
   m_EditorClassIdentifier: 
   displayName: Find Gem
+  isSticky: 0
   item: {fileID: 11400000, guid: fc244984026fd7d419e9d143aaa5c2c6, type: 2}
+  toolType: {fileID: 11400000, guid: b53129e4dfada2c4482c8beb67c1c283, type: 2}
   countMinimum: 1
   countMaximum: 2
   prefab: {fileID: 6783412581002236634, guid: 9fcc54d4f5a8b4545aec29d1e507d344, type: 3}

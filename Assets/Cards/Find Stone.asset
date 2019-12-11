@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Find Stone
   item: {fileID: 11400000, guid: 104924a183a042d4795941f6bff863ef, type: 2}
+  toolType: {fileID: 11400000, guid: b53129e4dfada2c4482c8beb67c1c283, type: 2}
   countMinimum: 1
   countMaximum: 3
   prefab: {fileID: 6783412581002236634, guid: 9fcc54d4f5a8b4545aec29d1e507d344, type: 3}

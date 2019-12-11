@@ -6,22 +6,24 @@ using UnityEngine;
 public class CardOfferDisplay : MonoBehaviour
 {
     [SerializeField]
-    CardOffers cardOffers;
+    GameCore cardOffers;
 
     Dictionary<CardInstance, CardDisplay> displays = new Dictionary<CardInstance, CardDisplay>();
 
     void Awake()
     {
-        cardOffers.Added += Add;
-        cardOffers.Removed += Remove;
+        cardOffers.CardManager.CardAdded += Add;
+        cardOffers.CardManager.CardRemoved += Remove;
 
-        foreach (CardInstance instance in cardOffers.Shown)
+        int index = 0;
+
+        foreach (CardInstance instance in cardOffers.CardManager.Cards)
         {
-            Add(instance);
+            Add(instance, index++);
         }
     }
 
-    void Add(CardInstance instance)
+    void Add(CardInstance instance, int index)
     {
         CardDisplay display = instance.CreateDisplay();
 
@@ -30,6 +32,7 @@ public class CardOfferDisplay : MonoBehaviour
         displays[instance] = display;
 
         display.transform.SetParent(transform);
+        display.transform.SetSiblingIndex(index - 1);
     }
 
     void Remove(CardInstance instance)
@@ -42,10 +45,6 @@ public class CardOfferDisplay : MonoBehaviour
 
     void Select(CardInstance instance)
     {
-        instance.Definition.Apply(cardOffers, instance.Data);
-
-        cardOffers.Clear();
-
-        cardOffers.Draw(3);
+        cardOffers.SelectCard(instance);
     }
 }

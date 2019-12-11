@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510aaad8282aa914fa5ae8c9e5a0a3cb, type: 3}
+  m_Name: Craftable Tools
+  m_EditorClassIdentifier: 
+  tools:
+  - {fileID: 11400000, guid: 707fec814a38d8043a453f2f7b910f9e, type: 2}
+  - {fileID: 11400000, guid: a8a765538946745408f7b5ac264cd92c, type: 2}
+  - {fileID: 11400000, guid: a87a6d9a1a81c134e8eac06e2e27f0b5, type: 2}
+  - {fileID: 11400000, guid: 3793e20879963f442a45596129ca9e6b, type: 2}
+  - {fileID: 11400000, guid: 7e4968c08b4aaf34e8e26f5765e437a5, type: 2}
+  - {fileID: 11400000, guid: cb40032df387b444caa8bf253bfce461, type: 2}

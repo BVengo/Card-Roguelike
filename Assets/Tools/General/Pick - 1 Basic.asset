@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d96d93b53261e468fe0c0078162ff2, type: 3}
+  m_Name: Pick - 1 Basic
+  m_EditorClassIdentifier: 
+  displayName: Stone Pickaxe
+  description: Mining +2
+  sprite: {fileID: 21300000, guid: 30bdeca5872499a4baf4060054fafcea, type: 3}
+  type: {fileID: 11400000, guid: b53129e4dfada2c4482c8beb67c1c283, type: 2}
+  cost:
+    items:
+    - item: {fileID: 11400000, guid: 104924a183a042d4795941f6bff863ef, type: 2}
+      count: 9
+    - item: {fileID: 11400000, guid: 571647ad6b94136419ec195da3e35336, type: 2}
+      count: 6
+    requirements: []
+  durability: 15
+  multiply: 1
+  add: 2

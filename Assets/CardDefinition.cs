@@ -8,32 +8,54 @@ public abstract class CardDefinition : ScriptableObject
 {
     public string DisplayName => displayName;
 
+    public bool IsSticky => isSticky;
+
     [SerializeField]
     string displayName;
+
+    [SerializeField]
+    bool isSticky = false;
     
-    public abstract object CreateData();
+    public abstract CardData CreateData(GameCore core);
 
-    public abstract CardDisplay CreateDisplay(object data);
+    public abstract CardDisplay CreateDisplay(CardInstance instance);
 
-    public abstract void Apply(CardOffers offers, object data);
+    public abstract void Apply(GameCore core, CardInstance instance);
+
+    public virtual void EndOfRound(GameCore core, CardInstance instance)
+    {
+        if (!IsSticky)
+        {
+            core.CardManager.ReplaceCard(instance);
+        }
+    }
 }
 
 public class CardInstance
 {
     public CardDefinition Definition { get; }
 
-    public object Data { get; }
+    public CardData Data { get; }
 
-    public CardInstance(CardDefinition definition)
+    public event CardInstanceHandler Changed;
+
+    public CardInstance(GameCore core, CardDefinition definition)
     {
         Definition = definition;
 
-        Data = Definition.CreateData();
+        Data = Definition.CreateData(core);
+
+        Data.Changed += OnChanged;
+    }
+
+    void OnChanged()
+    {
+        Changed?.Invoke(this);
     }
 
     public CardDisplay CreateDisplay()
     {
-        CardDisplay result = Definition.CreateDisplay(Data);
+        CardDisplay result = Definition.CreateDisplay(this);
 
         result.Initialize(this);
 
@@ -50,6 +72,13 @@ public class CardDisplay : MonoBehaviour, IPointerDownHandler
     public void Initialize(CardInstance instance)
     {
         this.instance = instance;
+
+        instance.Changed += Refresh;
+    }
+
+    public virtual void Refresh(CardInstance instance)
+    {
+
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)

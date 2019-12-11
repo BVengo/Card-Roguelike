@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Find Wood
   m_EditorClassIdentifier: 
   displayName: Find Wood
+  isSticky: 0
   item: {fileID: 11400000, guid: 571647ad6b94136419ec195da3e35336, type: 2}
+  toolType: {fileID: 11400000, guid: f03502e257e19ca49af604a84dffa33a, type: 2}
   countMinimum: 2
   countMaximum: 5
   prefab: {fileID: 6783412581002236634, guid: 9fcc54d4f5a8b4545aec29d1e507d344, type: 3}
